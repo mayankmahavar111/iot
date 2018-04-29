@@ -6,9 +6,48 @@ import os
 engine = pyttsx3.init()
 
 
+
+def comments(finger):
+    print finger
+    dic=[]
+    for i in range(20):
+        dic.append("")
+    dic[1] = "What is your name ?"
+    dic[2] = "Where am i ?"
+    dic[3] = "How to reach Police Station ?"
+    dic[4] = "How to reach Hospital ?"
+    dic[5] = "Is there any good Restaurent around ?"
+    dic[6] = "Can I use Your Phone ?"
+    dic[7] = "Do you Know someone who knows Sign Language ?"
+    dic[8] = "Will You Help Me out ?"
+    dic[9] = "Where is Airport ?"
+    dic[10] = "My Name is Manohar"
+    dic[11] = "I am from NITK."
+    dic[12] = "Go to Highway. Keep going for 2.5km towards south. You Will find police station on left side."
+    dic[13] = "Go to Highway. Keep going for 1km towards north. You Will find hospital on right side."
+    dic[14] = "Yes, there are. Try sea food which is 1 km away from here towards north direction."
+    dic[15] = "Ya , Sure."
+    dic[16] = "Yes. I know sign language. One of my friend also know sign language and he can speak too."
+    dic[17] = "Ya , sure . In what ways ?"
+    dic[18] = "Airport is on the outskirt of mangalore"
+    finger=str(finger)
+    #print len(finger)
+    if len(finger)==3:
+        if finger[0] ==  finger[2]:
+            return dic[int(finger[1])+9]
+    if len(finger) == 1:
+        return dic[int(finger)]
+    return "Unable To reply"
+
+
+
+
+
 def speak(text):
-    print text
-    engine.say(" finger shown at the camera is {}".format(text))
+    #print text
+    #engine.say(" finger shown at the camera is {}".format(text))
+    text=comments(text)
+    engine.say(text)
     engine.runAndWait()
 
 
@@ -78,3 +117,6 @@ if __name__ == '__main__':
     incEntry(getEntry())
     print getEntry()
     """
+    #digit=123
+    #print str(digit)[1]
+    #print len("123")
