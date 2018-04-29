@@ -48,6 +48,8 @@ if __name__ == '__main__':
 
     while(True):
         (grabbed,frame)=camera.read()
+        print frame
+        break
         frame=imutils.resize(frame,width=700)
         frame=cv2.flip(frame,1)
         clone=frame.copy()
